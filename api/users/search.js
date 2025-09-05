@@ -4,9 +4,7 @@ export default async function handler(req, res) {
 
   try {
     const response = await fetch(
-      `https://adaanalytics-1.onrender.com/users/search?name=${encodeURIComponent(
-        name
-      )}&page=${page}&limit=${limit}`
+      `https://adaanalytics-1.onrender.com/users/search?name=${encodeURIComponent(name)}&page=${page}&limit=${limit}`
     );
     const data = await response.json();
     res.status(200).json(data);
