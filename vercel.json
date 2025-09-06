@@ -1,7 +1,11 @@
 {
-  "rewrites": [
-    { "source": "/users", "destination": "/api/users" },
-    { "source": "/users/:id", "destination": "/api/users/:id" },
-    { "source": "/users/search", "destination": "/api/users/search" }
+  "version": 2,
+  "builds": [
+    { "src": "api/*.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/users", "dest": "/api/index.js" },
+    { "src": "/users/search", "dest": "/api/search.js" },
+    { "src": "/users/(.*)", "dest": "/api/[id].js" }
   ]
 }
